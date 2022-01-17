@@ -23,7 +23,7 @@ if (process.env.GITHUB_REF) {
 //    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${ref}_${now}.zip`,
 var fileOptions = {
     folder: process.env.LIB_FOLDER, 
-    fileName: 'fuga.txt',
+    fileName: process.env.FILE_PATH,
     fileContent: fs.readFileSync(process.env.FILE_PATH)
 };
 
