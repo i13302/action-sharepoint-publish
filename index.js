@@ -20,9 +20,10 @@ if (process.env.GITHUB_REF) {
   ref = process.env.GITHUB_REF.substr(process.env.GITHUB_REF.lastIndexOf('/') + 1);
 }
 
+//#    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${ref}_${now}.zip`,
 var fileOptions = {
     folder: process.env.LIB_FOLDER, 
-    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${ref}_${now}.zip`,
+    fileName: 'repoarchive.zip',
     fileContent: fs.readFileSync(process.env.FILE_PATH)
 };
 
@@ -31,5 +32,7 @@ spsave(coreOptions, creds, fileOptions)
     console.log('Success');
 })
 .catch(function(err){
+    console.log(process.env);
+    console.log(err);
     process.exit(1);
 });
