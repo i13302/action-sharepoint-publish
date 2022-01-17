@@ -20,10 +20,10 @@ if (process.env.GITHUB_REF) {
   ref = process.env.GITHUB_REF.substr(process.env.GITHUB_REF.lastIndexOf('/') + 1);
 }
 
-//#    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${ref}_${now}.zip`,
+//    fileName: `${trimSlashes(process.env.GITHUB_REPOSITORY)}_${ref}_${now}.zip`,
 var fileOptions = {
     folder: process.env.LIB_FOLDER, 
-    fileName: 'repoarchive.zip',
+    fileName: 'fuga.txt',
     fileContent: fs.readFileSync(process.env.FILE_PATH)
 };
 
